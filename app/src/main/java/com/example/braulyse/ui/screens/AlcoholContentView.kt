@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
 import com.example.braulyse.ui.theme.BraulyseTheme
+import java.text.DecimalFormat
 
 @Composable
 fun AlcoholContentView(
@@ -47,6 +48,8 @@ private fun AlcoholContentIndicator(
     maxAlcoholContent: Float,
     modifier: Modifier = Modifier
 ) {
+    val floatFormat = DecimalFormat(".00")
+
     Box(
         contentAlignment = Alignment.Center,
     ) {
@@ -63,7 +66,7 @@ private fun AlcoholContentIndicator(
             color = MaterialTheme.colorScheme.onSurface
         )
         Text(
-            text = alcoholContent.toString(),
+            text = floatFormat.format(alcoholContent),
             fontSize = integerResource(R.integer.alcohol_content_label_font_size).sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.surfaceTint
