@@ -19,6 +19,10 @@ import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
 import com.example.braulyse.ui.theme.BraulyseTheme
 
+
+private const val MIN_RELATIVE_DENSITY = 1.000f
+private const val MAX_RELATIVE_DENSITY = 1.083f
+
 @Composable
 fun DensityControl(
     specimenName: String,
@@ -38,8 +42,8 @@ fun DensityControl(
                 fontWeight = FontWeight.Bold,
             )
             FloatPicker(
-                minValue = 1.000f,
-                maxValue = 1.083f,
+                minValue = MIN_RELATIVE_DENSITY,
+                maxValue = MAX_RELATIVE_DENSITY,
                 initialValue = initialDensity,
                 onValueChanged = { newValue ->
                     selectedValue = newValue
