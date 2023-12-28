@@ -18,18 +18,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
+import com.example.braulyse.model.DensityMeasurement
 import com.example.braulyse.ui.theme.BraulyseTheme
 
 @Composable
 fun MeasurementView(
+    onMeasurementChange: (densityMeasurement: DensityMeasurement) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         MeasurementHeader(modifier)
-        Spacer(modifier = modifier.size(15.dp))
-        DensityView(modifier)
+        Spacer(modifier = modifier.size(20.dp))
+        DensityView(onMeasurementChange, modifier)
     }
 }
 
@@ -63,7 +65,7 @@ private fun MeasurementHeader(
 fun MeasurementViewPreview() {
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
-            MeasurementView()
+            MeasurementView({})
         }
     }
 }

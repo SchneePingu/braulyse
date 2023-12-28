@@ -14,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.braulyse.model.AlcoholContentViewModel
 import com.example.braulyse.ui.screens.AlcoholContentView
 import com.example.braulyse.ui.screens.AnalyseAppTopAppBar
 import com.example.braulyse.ui.screens.MeasurementView
@@ -24,6 +26,8 @@ import com.example.braulyse.ui.theme.BraulyseTheme
 fun AnalyseApp(
     modifier: Modifier = Modifier
 ) {
+    val alcoholContentViewModel: AlcoholContentViewModel = viewModel()
+
     Scaffold(
         topBar = { AnalyseAppTopAppBar() }
     ) {
@@ -38,8 +42,8 @@ fun AnalyseApp(
                 verticalArrangement = Arrangement.SpaceEvenly,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                AlcoholContentView(alcoholContent = 2.85f, maxAlcoholContent = 11.0f)
-                MeasurementView()
+                AlcoholContentView(alcoholContentViewModel)
+                MeasurementView(alcoholContentViewModel::updateAlcoholContent)
             }
         }
     }

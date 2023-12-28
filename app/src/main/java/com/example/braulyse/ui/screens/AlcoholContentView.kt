@@ -19,26 +19,24 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
+import com.example.braulyse.model.AlcoholContentViewModel
 import com.example.braulyse.ui.theme.BraulyseTheme
 import java.text.DecimalFormat
 
 @Composable
 fun AlcoholContentView(
-    alcoholContent: Float,
-    maxAlcoholContent: Float,
+    alcoholContentViewModel: AlcoholContentViewModel,
     modifier: Modifier = Modifier
 ) {
-    Surface(color = MaterialTheme.colorScheme.background) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            AlcoholContentIndicator(
-                alcoholContent = alcoholContent,
-                maxAlcoholContent = maxAlcoholContent
-            )
-            Spacer(modifier = modifier.size(10.dp))
-            AlcoholContentDescription()
-        }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        AlcoholContentIndicator(
+            alcoholContent = alcoholContentViewModel.alcoholContent,
+            maxAlcoholContent = alcoholContentViewModel.maxAlcoholContent
+        )
+        Spacer(modifier = modifier.size(10.dp))
+        AlcoholContentDescription()
     }
 }
 
@@ -48,7 +46,7 @@ private fun AlcoholContentIndicator(
     maxAlcoholContent: Float,
     modifier: Modifier = Modifier
 ) {
-    val floatFormat = DecimalFormat(".00")
+    val floatFormat = DecimalFormat("0.00")
 
     Box(
         contentAlignment = Alignment.Center,
@@ -94,10 +92,15 @@ private fun AlcoholContentDescription() {
 @Preview(name = "DarkTheme", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun AlcoholContentViewPreview() {
+    val alcoholContentViewModel = AlcoholContentViewModel()
+    alcoholContentViewModel.alcoholContent = 7.77f
+    alcoholContentViewModel.maxAlcoholContent = 11.0f
+
     BraulyseTheme {
-        AlcoholContentView(
-            alcoholContent = 7.77f,
-            maxAlcoholContent = 11.0f,
-        )
+        Surface(color = MaterialTheme.colorScheme.background) {
+            AlcoholContentView(
+                alcoholContentViewModel
+            )
+        }
     }
 }
