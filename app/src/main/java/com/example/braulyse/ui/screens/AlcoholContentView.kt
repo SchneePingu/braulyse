@@ -45,7 +45,13 @@ private fun AlcoholContentIndicator(
     maxAlcoholContent: Float,
     modifier: Modifier = Modifier
 ) {
-    val floatFormat = "%.3g"
+    fun formatAlcoholContent(alcoholContent: Float): String {
+        if (alcoholContent < 1f) {
+            return "%.2g".format(alcoholContent)
+        }
+
+        return "%.3g".format(alcoholContent)
+    }
 
     Box(
         contentAlignment = Alignment.Center,
@@ -63,8 +69,8 @@ private fun AlcoholContentIndicator(
             color = MaterialTheme.colorScheme.onSurface
         )
         Text(
-            text = floatFormat.format(alcoholContent),
-            fontSize = integerResource(R.integer.alcohol_content_label_font_size).sp,
+            text = formatAlcoholContent(alcoholContent),
+            fontSize = integerResource(R.integer.alcohol_content_font_size).sp,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.surfaceTint
         )
