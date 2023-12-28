@@ -2,11 +2,14 @@ package com.example.braulyse.ui.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,10 +26,13 @@ import com.example.braulyse.ui.theme.BraulyseTheme
 fun MeasurementView(
     modifier: Modifier = Modifier
 ) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        MeasurementHeader(modifier)
+    Surface(color = MaterialTheme.colorScheme.background) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            MeasurementHeader(modifier)
+            DensityView(modifier)
+        }
     }
 }
 
@@ -51,6 +57,19 @@ private fun MeasurementHeader(
             fontSize = integerResource(R.integer.measurement_description_font_size).sp
         )
         Spacer(modifier = modifier.size(10.dp))
+    }
+}
+
+@Composable
+private fun DensityView(
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        DensityControl(stringResource(R.string.extract_name_start), 1.055f, modifier)
+        DensityControl(stringResource(R.string.extract_name_end), 1.033f, modifier)
     }
 }
 

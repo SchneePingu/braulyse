@@ -5,4 +5,5 @@
     <integer name="circular_indicator_stroke_width">25</integer>
     <integer name="measurement_header_font_size">26</integer>
     <integer name="measurement_description_font_size">12</integer>
+    <integer name="extract_name_font_size">16</integer>
 </resources>

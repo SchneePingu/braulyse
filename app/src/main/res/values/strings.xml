@@ -4,4 +4,6 @@
     <string name="alcohol_content_unit">[Vol.-%]</string>
     <string name="measurement_header">Messwerte</string>
     <string name="measurement_description">(relative Dichte mittels Aräometer)</string>
+    <string name="extract_name_start">Stammwürze</string>
+    <string name="extract_name_end">Restextrakt</string>
 </resources>
