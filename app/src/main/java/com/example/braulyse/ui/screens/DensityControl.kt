@@ -40,7 +40,7 @@ fun DensityControl(
             FloatPicker(
                 minValue = 1.000f,
                 maxValue = 1.083f,
-                initialValue = 1.055f,
+                initialValue = initialDensity,
                 onValueChanged = { newValue ->
                     selectedValue = newValue
                 }
