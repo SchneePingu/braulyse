@@ -27,7 +27,7 @@ private const val MAX_RELATIVE_DENSITY = 1.083f
 fun DensityControl(
     specimenName: String,
     specimenDescription: String,
-    selectedDensity: Float,
+    density: Float,
     onDensityChange: (density: Float) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -49,7 +49,7 @@ fun DensityControl(
         FloatPicker(
             minValue = MIN_RELATIVE_DENSITY,
             maxValue = MAX_RELATIVE_DENSITY,
-            initialValue = selectedDensity,
+            initialValue = density,
             onValueChanged = onDensityChange,
         )
     }
