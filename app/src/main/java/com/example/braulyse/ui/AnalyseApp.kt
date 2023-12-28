@@ -1,5 +1,6 @@
 package com.example.braulyse.ui
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -44,7 +45,8 @@ fun AnalyseApp(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(name = "LightTheme", showBackground = true)
+@Preview(name = "DarkTheme", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun AnalyseAppPreview() {
     BraulyseTheme {
