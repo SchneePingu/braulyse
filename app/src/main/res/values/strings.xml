@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Braulyse</string>
+    <string name="alcohol_content_label">Alkoholgehalt</string>
+    <string name="alcohol_content_unit">[Vol.-%]</string>
 </resources>

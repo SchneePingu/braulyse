@@ -1,0 +1,6 @@
+<resources>
+    <integer name="alcohol_content_label_font_size">28</integer>
+    <integer name="alcohol_content_unit_font_size">20</integer>
+    <integer name="circular_indicator_size">180</integer>
+    <integer name="circular_indicator_stroke_width">25</integer>
+</resources>
