@@ -28,9 +28,10 @@ fun MeasurementView(
 ) {
     Surface(color = MaterialTheme.colorScheme.background) {
         Column(
-            horizontalAlignment = Alignment.CenterHorizontally
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             MeasurementHeader(modifier)
+            Spacer(modifier = modifier.size(15.dp))
             DensityView(modifier)
         }
     }
@@ -66,10 +67,20 @@ private fun DensityView(
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly
+        horizontalArrangement = Arrangement.SpaceEvenly,
     ) {
-        DensityControl(stringResource(R.string.extract_name_start), 1.055f, modifier)
-        DensityControl(stringResource(R.string.extract_name_end), 1.033f, modifier)
+        DensityControl(
+            stringResource(R.string.extract_name_start),
+            stringResource(R.string.extract_description_start),
+            1.055f,
+            modifier
+        )
+        DensityControl(
+            stringResource(R.string.extract_name_end),
+            stringResource(R.string.extract_description_end),
+            1.033f,
+            modifier
+        )
     }
 }
 

@@ -2,6 +2,8 @@ package com.example.braulyse.ui.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -15,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.integerResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
 import com.example.braulyse.ui.theme.BraulyseTheme
@@ -26,6 +29,7 @@ private const val MAX_RELATIVE_DENSITY = 1.083f
 @Composable
 fun DensityControl(
     specimenName: String,
+    specimenDescription: String,
     initialDensity: Float,
     modifier: Modifier = Modifier
 ) {
@@ -41,6 +45,12 @@ fun DensityControl(
                 fontSize = integerResource(R.integer.extract_name_font_size).sp,
                 fontWeight = FontWeight.Bold,
             )
+            Text(
+                text = specimenDescription,
+                fontSize = integerResource(R.integer.extract_description_font_size).sp,
+                fontWeight = FontWeight.Bold,
+            )
+            Spacer(modifier = modifier.size(5.dp))
             FloatPicker(
                 minValue = MIN_RELATIVE_DENSITY,
                 maxValue = MAX_RELATIVE_DENSITY,
@@ -58,6 +68,6 @@ fun DensityControl(
 @Composable
 fun DensityControlPreview() {
     BraulyseTheme {
-        DensityControl("Stammwürze", 1.055f)
+        DensityControl("Stammwürze", "(vorher)", 1.055f)
     }
 }

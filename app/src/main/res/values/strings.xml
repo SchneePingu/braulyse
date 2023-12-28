@@ -5,5 +5,7 @@
     <string name="measurement_header">Messwerte</string>
     <string name="measurement_description">(relative Dichte mittels Aräometer)</string>
     <string name="extract_name_start">Stammwürze</string>
+    <string name="extract_description_start">(vorher)</string>
     <string name="extract_name_end">Restextrakt</string>
+    <string name="extract_description_end">(nachher)</string>
 </resources>
