@@ -45,6 +45,7 @@ private fun MeasurementHeader(
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = modifier.size(5.dp))
         Text(
             text = stringResource(R.string.measurement_header),
             color = MaterialTheme.colorScheme.onSecondary,
