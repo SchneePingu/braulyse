@@ -22,27 +22,32 @@ fun FloatPicker(
     onValueChanged: (Float) -> Unit
 ) {
     val context = LocalContext.current
-    val floatPicker = remember { NumberPicker(ContextThemeWrapper(context, R.style.FloatPickerStyle)) }
+    val floatPicker = remember {
+        NumberPicker(ContextThemeWrapper(context, R.style.FloatPickerStyle))
+    }
 
     val minValueIntRep = getIntRep(minValue)
     val maxValueIntRep = getIntRep(maxValue)
     val initialValueIntRep = getIntRep(initialValue)
 
-    val sortedValues = (minValueIntRep..maxValueIntRep).map { value -> getFloatRep(value) }.reversed()
+    val sortedValues = (minValueIntRep..maxValueIntRep)
+        .map { value -> getFloatRep(value) }
+        .reversed()
 
     val floatFormat = DecimalFormat(".000")
 
     floatPicker.minValue = 0
     floatPicker.maxValue = sortedValues.size - 1
-    floatPicker.displayedValues = sortedValues.map { value -> floatFormat.format(value) }.toTypedArray()
+    floatPicker.displayedValues = sortedValues
+        .map { value -> floatFormat.format(value) }.toTypedArray()
     floatPicker.wrapSelectorWheel = false
     floatPicker.value = maxValueIntRep - initialValueIntRep
 
     AndroidView(
         factory = { floatPicker },
         update = {
-            it.setOnValueChangedListener { _, _, newVal ->
-                onValueChanged(sortedValues[newVal])
+            it.setOnValueChangedListener { _, _, selectedValue ->
+                onValueChanged(sortedValues[selectedValue])
             }
         }
     )

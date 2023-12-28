@@ -8,13 +8,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.integerResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,36 +27,31 @@ private const val MAX_RELATIVE_DENSITY = 1.083f
 fun DensityControl(
     specimenName: String,
     specimenDescription: String,
-    initialDensity: Float,
+    selectedDensity: Float,
+    onDensityChange: (density: Float) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var selectedValue by remember { mutableStateOf(initialDensity) }
-
-    Surface(color = MaterialTheme.colorScheme.background) {
-        Column(
-            modifier = modifier,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = specimenName,
-                fontSize = integerResource(R.integer.extract_name_font_size).sp,
-                fontWeight = FontWeight.Bold,
-            )
-            Text(
-                text = specimenDescription,
-                fontSize = integerResource(R.integer.extract_description_font_size).sp,
-                fontWeight = FontWeight.Bold,
-            )
-            Spacer(modifier = modifier.size(5.dp))
-            FloatPicker(
-                minValue = MIN_RELATIVE_DENSITY,
-                maxValue = MAX_RELATIVE_DENSITY,
-                initialValue = initialDensity,
-                onValueChanged = { newValue ->
-                    selectedValue = newValue
-                }
-            )
-        }
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = specimenName,
+            fontSize = integerResource(R.integer.extract_name_font_size).sp,
+            fontWeight = FontWeight.Bold,
+        )
+        Text(
+            text = specimenDescription,
+            fontSize = integerResource(R.integer.extract_description_font_size).sp,
+            fontWeight = FontWeight.Bold,
+        )
+        Spacer(modifier = modifier.size(5.dp))
+        FloatPicker(
+            minValue = MIN_RELATIVE_DENSITY,
+            maxValue = MAX_RELATIVE_DENSITY,
+            initialValue = selectedDensity,
+            onValueChanged = onDensityChange,
+        )
     }
 }
 
@@ -68,6 +60,13 @@ fun DensityControl(
 @Composable
 fun DensityControlPreview() {
     BraulyseTheme {
-        DensityControl("Stammwürze", "(vorher)", 1.055f)
+        Surface(color = MaterialTheme.colorScheme.background) {
+            DensityControl(
+                stringResource(R.string.extract_name_initial),
+                stringResource(R.string.extract_description_initial),
+                1.055f,
+                {}
+            )
+        }
     }
 }

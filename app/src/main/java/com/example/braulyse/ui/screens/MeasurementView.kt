@@ -2,9 +2,7 @@ package com.example.braulyse.ui.screens
 
 import android.content.res.Configuration
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -26,14 +24,12 @@ import com.example.braulyse.ui.theme.BraulyseTheme
 fun MeasurementView(
     modifier: Modifier = Modifier
 ) {
-    Surface(color = MaterialTheme.colorScheme.background) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            MeasurementHeader(modifier)
-            Spacer(modifier = modifier.size(15.dp))
-            DensityView(modifier)
-        }
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        MeasurementHeader(modifier)
+        Spacer(modifier = modifier.size(15.dp))
+        DensityView(modifier)
     }
 }
 
@@ -61,34 +57,13 @@ private fun MeasurementHeader(
     }
 }
 
-@Composable
-private fun DensityView(
-    modifier: Modifier = Modifier
-) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly,
-    ) {
-        DensityControl(
-            stringResource(R.string.extract_name_start),
-            stringResource(R.string.extract_description_start),
-            1.055f,
-            modifier
-        )
-        DensityControl(
-            stringResource(R.string.extract_name_end),
-            stringResource(R.string.extract_description_end),
-            1.033f,
-            modifier
-        )
-    }
-}
-
 @Preview(name = "LightTheme", showBackground = true)
 @Preview(name = "DarkTheme", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 fun MeasurementViewPreview() {
     BraulyseTheme {
-        MeasurementView()
+        Surface(color = MaterialTheme.colorScheme.background) {
+            MeasurementView()
+        }
     }
 }
