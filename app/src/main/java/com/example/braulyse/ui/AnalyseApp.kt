@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.braulyse.ui.screens.AlcoholContentView
 import com.example.braulyse.ui.screens.AnalyseAppTopAppBar
+import com.example.braulyse.ui.screens.MeasurementView
 import com.example.braulyse.ui.theme.BraulyseTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -37,6 +38,7 @@ fun AnalyseApp(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 AlcoholContentView(alcoholContent = 2.85f, maxAlcoholContent = 11.0f)
+                MeasurementView()
             }
         }
     }

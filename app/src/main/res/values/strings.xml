@@ -2,4 +2,6 @@
     <string name="app_name">Braulyse</string>
     <string name="alcohol_content_label">Alkoholgehalt</string>
     <string name="alcohol_content_unit">[Vol.-%]</string>
+    <string name="measurement_header">Messwerte</string>
+    <string name="measurement_description">(relative Dichte mittels Aräometer)</string>
 </resources>

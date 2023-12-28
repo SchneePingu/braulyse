@@ -3,4 +3,6 @@
     <integer name="alcohol_content_unit_font_size">20</integer>
     <integer name="circular_indicator_size">180</integer>
     <integer name="circular_indicator_stroke_width">25</integer>
+    <integer name="measurement_header_font_size">26</integer>
+    <integer name="measurement_description_font_size">12</integer>
 </resources>
