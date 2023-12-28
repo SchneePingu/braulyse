@@ -2,8 +2,8 @@ package com.example.braulyse.service
 
 import com.example.braulyse.model.DensityMeasurement
 
-private const val DEFAULT_INITIAL_DENSITY = 1.055f
-private const val DEFAULT_FINAL_DENSITY = 1.033f
+private const val DEFAULT_INITIAL_DENSITY = 1.050f
+private const val DEFAULT_FINAL_DENSITY = 1.010f
 
 private const val MIN_RELATIVE_DENSITY = 1.000f
 private const val MAX_RELATIVE_DENSITY = 1.083f
