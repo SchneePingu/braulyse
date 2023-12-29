@@ -13,6 +13,7 @@ Das hier ist eine Android App namens *Braulyse*. Sie unterstützt dich bei der *
 <p align="left">
  <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_light_theme.png?raw=true" alt="Braulyse Preview Light Theme" width="250">
  <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_dark_theme.png?raw=true" alt="Braulyse Preview Dark Theme" width="250">
+</p>
   
 (Helles und dunkles Design.)
 
