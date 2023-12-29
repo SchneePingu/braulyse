@@ -2,5 +2,6 @@
 <resources>
     <style name="FloatPickerStyle">
         <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textSize">16sp</item>
     </style>
 </resources>

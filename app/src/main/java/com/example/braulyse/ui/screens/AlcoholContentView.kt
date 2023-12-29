@@ -30,12 +30,14 @@ fun AlcoholContentView(
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = modifier.size(5.dp))
         AlcoholContentIndicator(
             alcoholContent = alcoholContentViewModel.alcoholContent,
             maxAlcoholContent = alcoholContentViewModel.maxAlcoholContent
         )
-        Spacer(modifier = modifier.size(10.dp))
+        Spacer(modifier = modifier.size(15.dp))
         AlcoholContentDescription()
+        Spacer(modifier = modifier.size(5.dp))
     }
 }
 

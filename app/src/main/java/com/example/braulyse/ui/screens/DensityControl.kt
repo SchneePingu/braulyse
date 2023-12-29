@@ -35,6 +35,14 @@ fun DensityControl(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = modifier.size(5.dp))
+        FloatPicker(
+            minValue = MIN_RELATIVE_DENSITY,
+            maxValue = MAX_RELATIVE_DENSITY,
+            initialValue = density,
+            onValueChanged = onDensityChange,
+        )
+        Spacer(modifier = modifier.size(20.dp))
         Text(
             text = specimenName,
             fontSize = integerResource(R.integer.extract_name_font_size).sp,
@@ -43,14 +51,6 @@ fun DensityControl(
         Text(
             text = specimenDescription,
             fontSize = integerResource(R.integer.extract_description_font_size).sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Spacer(modifier = modifier.size(5.dp))
-        FloatPicker(
-            minValue = MIN_RELATIVE_DENSITY,
-            maxValue = MAX_RELATIVE_DENSITY,
-            initialValue = density,
-            onValueChanged = onDensityChange,
         )
     }
 }
