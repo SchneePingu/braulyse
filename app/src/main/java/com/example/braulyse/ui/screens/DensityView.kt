@@ -60,14 +60,14 @@ fun DensityView(
         DensityControl(
             stringResource(R.string.extract_name_initial),
             stringResource(R.string.extract_description_initial),
-            initialDensity,
+            defaultDensityMeasurement.initialDensity,
             {density -> onInitialDensityChange(density)},
             modifier
         )
         DensityControl(
             stringResource(R.string.extract_name_final),
             stringResource(R.string.extract_description_final),
-            finalDensity,
+            defaultDensityMeasurement.finalDensity,
             {density -> onFinalDensityChange(density)},
             modifier
         )
