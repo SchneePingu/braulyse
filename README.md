@@ -2,22 +2,19 @@
 
 # [ Braulyse ]
 
+ **π mal Gaumen war gestern.**
+ 
+ <a href="https://img.shields.io/badge/Promille-0,0-green.svg"><img src="https://img.shields.io/badge/Promille-0,0-green.svg" alt="Promile 0,0"></a>
+
 ## Was ist denn das hier? 🧐
 
-**Das hier ist eine Android App namens *Braulyse*. Sie unterstützt dich beim Bierbrauen.**
+Das hier ist eine Android App namens *Braulyse*. Sie unterstützt dich bei der **Bestimmung des Alkoholgehalts** deines selbstgebrauten Bieres anhand der **Messung der relativen Dichte** vor und nach der Gärung.
 
-Wenn du vor der Installation einen Blick auf das Aussehen der App werfen möchtest, dann kannst du dies über die nachfolgende *App-Vorschau* tun. 🤩
-
-<details>
-  <summary>App-Vorschau (⚠️ Achtung, Spoiler! ⚠️)</summary>
-
-Helles und dunkles Design.
-
-  <p align="left">
-   <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_light_theme.png?raw=true" alt="Braulyse Preview Light Theme" width="250">
-   <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_dark_theme.png?raw=true" alt="Braulyse Preview Dark Theme" width="250">
-  </p>
-</details>
+<p align="left">
+ <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_light_theme.png?raw=true" alt="Braulyse Preview Light Theme" width="250">
+ <img src="https://github.com/SchneePingu/braulyse/blob/main/docs/assets/braulyse_preview_dark_theme.png?raw=true" alt="Braulyse Preview Dark Theme" width="250">
+  
+(Helles und dunkles Design.)
 
 ## Installation 🔨
 **TL;DR**
@@ -43,10 +40,15 @@ Datei [*Braulyse.apk*](https://github.com/SchneePingu/braulyse/releases/latest/d
 
 **Herzlichen Glückwunsch du hast nun Braulyse installiert!** 🥳
 
-**Zeit, es sich gemütlich zu machen - vielleicht ja sogar mit etwas Selbstgebrautem.** 😌
+**Zeit, es sich gemütlich zu machen; vielleicht ja sogar mit etwas Selbstgebrautem.** 😉
 
 ## FAQ 💡
 
 #### Welche Android Versionen werden denn unterstützt?
 
 *Braulyse* läuft auf allen Android Versionen ab Lollipop (Android 5.0, 2014). 🍭
+
+## Ausgewählte Rezensionen 📝
+
+* Ekkehardt (43 J.): *Braulyse* hat mein Leben verändert, und meine Ehe gerettet.
+* Guido (57 J.): Mit *Braulyse* muss ich nachts endlich nicht mehr raus.
