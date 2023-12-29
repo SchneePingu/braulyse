@@ -17,11 +17,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.braulyse.R
+import com.example.braulyse.service.DensityMeasurementService
 import com.example.braulyse.ui.theme.BraulyseTheme
 
-
-private const val MIN_RELATIVE_DENSITY = 1.000f
-private const val MAX_RELATIVE_DENSITY = 1.083f
 
 @Composable
 fun DensityControl(
@@ -37,8 +35,8 @@ fun DensityControl(
     ) {
         Spacer(modifier = modifier.size(5.dp))
         FloatPicker(
-            minValue = MIN_RELATIVE_DENSITY,
-            maxValue = MAX_RELATIVE_DENSITY,
+            minValue = DensityMeasurementService.getMinDensity(),
+            maxValue = DensityMeasurementService.getMaxDensity(),
             initialValue = density,
             onValueChanged = onDensityChange,
         )

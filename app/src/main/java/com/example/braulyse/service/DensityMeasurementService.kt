@@ -21,5 +21,13 @@ class DensityMeasurementService {
         fun getDensityMeasurementLimit(): DensityMeasurement {
             return DensityMeasurement(MAX_RELATIVE_DENSITY, MIN_RELATIVE_DENSITY)
         }
+
+        fun getMinDensity(): Float {
+            return MIN_RELATIVE_DENSITY
+        }
+
+        fun getMaxDensity(): Float {
+            return MAX_RELATIVE_DENSITY
+        }
     }
 }
