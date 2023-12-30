@@ -49,7 +49,7 @@ private fun AlcoholContentIndicator(
 ) {
     fun formatAlcoholContent(alcoholContent: Double): String {
         if (alcoholContent < 1.000) {
-            return "%.2g".format(alcoholContent)
+            return "%.2f".format(alcoholContent)
         }
 
         return "%.3g".format(alcoholContent)
