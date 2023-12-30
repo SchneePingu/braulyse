@@ -2,8 +2,8 @@ package com.example.braulyse.service
 
 class DensityMeasurementService {
     companion object {
-        const val defaultInitialDensity = 1.050
-        const val defaultFinalDensity = 1.021
+        const val defaultInitialDensity = 1.056
+        const val defaultFinalDensity = 1.022
 
         const val minDensity = 1.000
         const val maxDensity = 1.083
