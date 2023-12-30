@@ -55,11 +55,11 @@ fun FloatPicker(
 }
 
 private fun getIntRep(value: Double): Int {
-    return (value * 1000.0).roundToInt()
+    return (value * 500.0).roundToInt()
 }
 
 private fun getFloatRep(value: Int): Double {
-    return value * 0.001
+    return value * 0.002
 }
 
 @Preview(name = "LightTheme", showBackground = true)
@@ -68,7 +68,7 @@ private fun getFloatRep(value: Int): Double {
 fun FloatPickerPreview() {
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
-            FloatPicker(1.000, 1.083, 1.055, {})
+            FloatPicker(1.000, 1.082, 1.056, {})
         }
     }
 }
