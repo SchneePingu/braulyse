@@ -1,5 +1,5 @@
 <resources>
-    <integer name="app_name_font_size">34</integer>
+    <integer name="app_name_font_size">30</integer>
     <integer name="alcohol_content_font_size">28</integer>
     <integer name="alcohol_content_label_font_size">22</integer>
     <integer name="alcohol_content_unit_font_size">18</integer>
