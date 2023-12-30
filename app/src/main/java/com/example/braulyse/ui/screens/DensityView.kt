@@ -7,49 +7,37 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.braulyse.R
-import com.example.braulyse.model.DensityMeasurement
-import com.example.braulyse.service.DensityMeasurementService
+import com.example.braulyse.model.DensityMeasurementViewModel
 import com.example.braulyse.ui.theme.BraulyseTheme
 
 @Composable
 fun DensityView(
-    onMeasurementChange: (densityMeasurement: DensityMeasurement) -> Unit,
+    densityMeasurementViewModel: DensityMeasurementViewModel,
+    onMeasurementChange: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val defaultDensityMeasurement = DensityMeasurementService.getDensityMeasurementDefault()
-    var initialDensity by remember { mutableStateOf(defaultDensityMeasurement.initialDensity) }
-    var finalDensity by remember { mutableStateOf(defaultDensityMeasurement.finalDensity) }
-
-    fun updateMeasurement() {
-        onMeasurementChange(DensityMeasurement(initialDensity, finalDensity))
-    }
-
     fun onInitialDensityChange(density: Double) {
-        initialDensity = density
+        densityMeasurementViewModel.initialDensity = density
 
-        if (finalDensity > density) {
-            finalDensity = density
+        if (densityMeasurementViewModel.finalDensity > density) {
+            densityMeasurementViewModel.finalDensity = density
         }
 
-        updateMeasurement()
+        onMeasurementChange()
     }
     
     fun onFinalDensityChange(density: Double) {
-        finalDensity = density
+        densityMeasurementViewModel.finalDensity = density
 
-        if (initialDensity < density) {
-            initialDensity = density
+        if (densityMeasurementViewModel.initialDensity < density) {
+            densityMeasurementViewModel.initialDensity = density
         }
 
-        updateMeasurement()
+        onMeasurementChange()
     }
 
 
@@ -60,14 +48,14 @@ fun DensityView(
         DensityControl(
             stringResource(R.string.extract_name_initial),
             stringResource(R.string.extract_description_initial),
-            initialDensity,
+            densityMeasurementViewModel.initialDensity,
             {density -> onInitialDensityChange(density)},
             modifier
         )
         DensityControl(
             stringResource(R.string.extract_name_final),
             stringResource(R.string.extract_description_final),
-            finalDensity,
+            densityMeasurementViewModel.finalDensity,
             {density -> onFinalDensityChange(density)},
             modifier
         )
@@ -80,7 +68,7 @@ fun DensityView(
 fun DensityViewPreview() {
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
-            DensityView({})
+            DensityView(DensityMeasurementViewModel(), {})
         }
     }
 }

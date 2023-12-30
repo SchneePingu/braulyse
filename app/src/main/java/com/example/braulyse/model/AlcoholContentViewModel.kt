@@ -10,16 +10,15 @@ import com.example.braulyse.service.DensityMeasurementService
 
 class AlcoholContentViewModel : ViewModel() {
     var alcoholContent: Double by mutableStateOf(0.0)
-    var maxAlcoholContent: Double = 0.0
-
+    var maxAlcoholContent: Double by mutableStateOf(0.0)
     init {
         alcoholContent = AlcoholContentService.calculateAlcoholContent(
-            DensityMeasurementService.getDensityMeasurementDefault())
+            DensityMeasurementService.defaultInitialDensity,
+            DensityMeasurementService.defaultFinalDensity
+        )
         maxAlcoholContent = AlcoholContentService.calculateAlcoholContent(
-            DensityMeasurementService.getDensityMeasurementLimit())
-    }
-
-    fun updateAlcoholContent(densityMeasurement: DensityMeasurement) {
-        alcoholContent = AlcoholContentService.calculateAlcoholContent(densityMeasurement)
+            DensityMeasurementService.maxDensity,
+            DensityMeasurementService.minDensity
+        )
     }
 }

@@ -35,8 +35,8 @@ fun DensityControl(
     ) {
         Spacer(modifier = modifier.size(5.dp))
         FloatPicker(
-            minValue = DensityMeasurementService.getMinDensity(),
-            maxValue = DensityMeasurementService.getMaxDensity(),
+            minValue = DensityMeasurementService.minDensity,
+            maxValue = DensityMeasurementService.maxDensity,
             initialValue = density,
             onValueChanged = onDensityChange,
         )
