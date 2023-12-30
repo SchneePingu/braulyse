@@ -17,7 +17,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.braulyse.model.AlcoholContentViewModel
 import com.example.braulyse.model.DensityMeasurementViewModel
-import com.example.braulyse.service.AlcoholContentService
 import com.example.braulyse.ui.screens.AlcoholContentView
 import com.example.braulyse.ui.screens.AnalyseAppTopAppBar
 import com.example.braulyse.ui.screens.MeasurementView
@@ -32,7 +31,7 @@ fun AnalyseApp(
     val densityMeasurementViewModel: DensityMeasurementViewModel = viewModel()
 
     fun onMeasurementChange() {
-        alcoholContentViewModel.alcoholContent = AlcoholContentService.calculateAlcoholContent(
+        alcoholContentViewModel.updateModel(
             densityMeasurementViewModel.initialDensity,
             densityMeasurementViewModel.finalDensity
         )

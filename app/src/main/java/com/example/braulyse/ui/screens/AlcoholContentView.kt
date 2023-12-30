@@ -33,6 +33,7 @@ fun AlcoholContentView(
         Spacer(modifier = modifier.size(5.dp))
         AlcoholContentIndicator(
             alcoholContent = alcoholContentViewModel.alcoholContent,
+            alcoholContentUncertainty = alcoholContentViewModel.alcoholContentUncertainty,
             maxAlcoholContent = alcoholContentViewModel.maxAlcoholContent
         )
         Spacer(modifier = modifier.size(15.dp))
@@ -44,6 +45,7 @@ fun AlcoholContentView(
 @Composable
 private fun AlcoholContentIndicator(
     alcoholContent: Double,
+    alcoholContentUncertainty: Double,
     maxAlcoholContent: Double,
     modifier: Modifier = Modifier
 ) {
@@ -53,6 +55,10 @@ private fun AlcoholContentIndicator(
         }
 
         return "%.3g".format(alcoholContent)
+    }
+
+    fun formatAlcoholContentUncertainty(alcoholContentUncertainty: Double): String {
+        return "(±${formatAlcoholContent(alcoholContentUncertainty)})"
     }
 
     Box(
@@ -70,12 +76,22 @@ private fun AlcoholContentIndicator(
             strokeWidth = integerResource(R.integer.circular_indicator_stroke_width).dp,
             color = MaterialTheme.colorScheme.onSurface
         )
-        Text(
-            text = formatAlcoholContent(alcoholContent),
-            fontSize = integerResource(R.integer.alcohol_content_font_size).sp,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.surfaceTint
-        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = formatAlcoholContent(alcoholContent),
+                fontSize = integerResource(R.integer.alcohol_content_font_size).sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.surfaceTint
+            )
+            Text(
+                text = formatAlcoholContentUncertainty(alcoholContentUncertainty),
+                fontSize = integerResource(R.integer.alcohol_content_uncertainty_font_size).sp,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.surfaceTint
+            )
+        }
     }
 }
 
