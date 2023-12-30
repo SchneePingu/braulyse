@@ -13,13 +13,14 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.example.braulyse.R
 import com.example.braulyse.ui.theme.BraulyseTheme
 import java.text.DecimalFormat
+import kotlin.math.roundToInt
 
 @Composable
 fun FloatPicker(
-    minValue: Float,
-    maxValue: Float,
-    initialValue: Float,
-    onValueChanged: (Float) -> Unit
+    minValue: Double,
+    maxValue: Double,
+    initialValue: Double,
+    onValueChanged: (Double) -> Unit
 ) {
     val context = LocalContext.current
     val floatPicker = remember {
@@ -53,12 +54,12 @@ fun FloatPicker(
     )
 }
 
-private fun getIntRep(value: Float): Int {
-    return (value * 1000).toInt()
+private fun getIntRep(value: Double): Int {
+    return (value * 1000.0).roundToInt()
 }
 
-private fun getFloatRep(value: Int): Float {
-    return (value * 0.001).toFloat()
+private fun getFloatRep(value: Int): Double {
+    return value * 0.001
 }
 
 @Preview(name = "LightTheme", showBackground = true)
@@ -67,7 +68,7 @@ private fun getFloatRep(value: Int): Float {
 fun FloatPickerPreview() {
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
-            FloatPicker(1.000f, 1.083f, 1.055f, {})
+            FloatPicker(1.000, 1.083, 1.055, {})
         }
     }
 }

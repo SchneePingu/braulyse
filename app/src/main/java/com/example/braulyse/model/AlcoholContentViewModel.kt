@@ -9,8 +9,8 @@ import com.example.braulyse.service.DensityMeasurementService
 
 
 class AlcoholContentViewModel : ViewModel() {
-    var alcoholContent: Float by mutableStateOf(0f)
-    var maxAlcoholContent: Float = 0f
+    var alcoholContent: Double by mutableStateOf(0.0)
+    var maxAlcoholContent: Double = 0.0
 
     init {
         alcoholContent = AlcoholContentService.calculateAlcoholContent(

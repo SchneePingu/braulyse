@@ -32,7 +32,7 @@ fun DensityView(
         onMeasurementChange(DensityMeasurement(initialDensity, finalDensity))
     }
 
-    fun onInitialDensityChange(density: Float) {
+    fun onInitialDensityChange(density: Double) {
         initialDensity = density
 
         if (finalDensity > density) {
@@ -42,7 +42,7 @@ fun DensityView(
         updateMeasurement()
     }
     
-    fun onFinalDensityChange(density: Float) {
+    fun onFinalDensityChange(density: Double) {
         finalDensity = density
 
         if (initialDensity < density) {
@@ -60,14 +60,14 @@ fun DensityView(
         DensityControl(
             stringResource(R.string.extract_name_initial),
             stringResource(R.string.extract_description_initial),
-            defaultDensityMeasurement.initialDensity,
+            initialDensity,
             {density -> onInitialDensityChange(density)},
             modifier
         )
         DensityControl(
             stringResource(R.string.extract_name_final),
             stringResource(R.string.extract_description_final),
-            defaultDensityMeasurement.finalDensity,
+            finalDensity,
             {density -> onFinalDensityChange(density)},
             modifier
         )

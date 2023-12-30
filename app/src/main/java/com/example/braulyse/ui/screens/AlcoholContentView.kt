@@ -43,12 +43,12 @@ fun AlcoholContentView(
 
 @Composable
 private fun AlcoholContentIndicator(
-    alcoholContent: Float,
-    maxAlcoholContent: Float,
+    alcoholContent: Double,
+    maxAlcoholContent: Double,
     modifier: Modifier = Modifier
 ) {
-    fun formatAlcoholContent(alcoholContent: Float): String {
-        if (alcoholContent < 1f) {
+    fun formatAlcoholContent(alcoholContent: Double): String {
+        if (alcoholContent < 1.000) {
             return "%.2g".format(alcoholContent)
         }
 
@@ -65,7 +65,7 @@ private fun AlcoholContentIndicator(
             color = MaterialTheme.colorScheme.surface
         )
         CircularProgressIndicator(
-            progress = alcoholContent / maxAlcoholContent,
+            progress = (alcoholContent / maxAlcoholContent).toFloat(),
             modifier = modifier.size(integerResource(R.integer.circular_indicator_size).dp),
             strokeWidth = integerResource(R.integer.circular_indicator_stroke_width).dp,
             color = MaterialTheme.colorScheme.onSurface
@@ -100,8 +100,8 @@ private fun AlcoholContentDescription() {
 @Composable
 fun AlcoholContentViewPreview() {
     val alcoholContentViewModel = AlcoholContentViewModel()
-    alcoholContentViewModel.alcoholContent = 7.77f
-    alcoholContentViewModel.maxAlcoholContent = 11.0f
+    alcoholContentViewModel.alcoholContent = 7.77
+    alcoholContentViewModel.maxAlcoholContent = 11.0
 
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {

@@ -25,8 +25,8 @@ import com.example.braulyse.ui.theme.BraulyseTheme
 fun DensityControl(
     specimenName: String,
     specimenDescription: String,
-    density: Float,
-    onDensityChange: (density: Float) -> Unit,
+    density: Double,
+    onDensityChange: (density: Double) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -62,7 +62,7 @@ fun DensityControlPreview() {
             DensityControl(
                 stringResource(R.string.extract_name_initial),
                 stringResource(R.string.extract_description_initial),
-                1.055f,
+                1.055,
                 {}
             )
         }
