@@ -43,6 +43,10 @@ Datei [*Braulyse.apk*](https://github.com/SchneePingu/braulyse/releases/latest/d
 
 ## FAQ 💡
 
+#### Was stellt denn das App Icon dar?
+
+Das App Icon von *Braulyse* stellt die Einheit °P (gesprochen Grad Plato) dar, allerdings um -90° gedreht. 🙃
+
 #### Welche Android Versionen werden denn unterstützt?
 
 *Braulyse* läuft auf allen Android Versionen ab Lollipop (Android 5.0, 2014). 🍭
