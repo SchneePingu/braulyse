@@ -6,7 +6,7 @@ class DensityMeasurementService {
         const val defaultFinalDensity = 1.022
 
         const val minDensity = 1.000
-        const val maxDensity = 1.083
+        const val maxDensity = 1.080
 
         // Convert relative density [1] to mass fraction [°P] (Degree Plato)
         fun toMassFraction(relativeDensity: Double): Double {
