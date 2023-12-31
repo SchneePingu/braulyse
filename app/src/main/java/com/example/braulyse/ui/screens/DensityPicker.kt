@@ -24,7 +24,7 @@ fun DensityPicker(
 ) {
     val context = LocalContext.current
     val densityPicker = remember {
-        NumberPicker(ContextThemeWrapper(context, R.style.FloatPickerStyle))
+        NumberPicker(ContextThemeWrapper(context, R.style.DensityPickerStyle))
     }
 
     val minValueIntRep = getIntRep(minValue)

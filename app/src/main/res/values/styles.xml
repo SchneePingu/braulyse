@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="FloatPickerStyle">
+    <style name="DensityPickerStyle">
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textSize">18sp</item>
     </style>
