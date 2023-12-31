@@ -16,14 +16,14 @@ import java.text.DecimalFormat
 import kotlin.math.roundToInt
 
 @Composable
-fun FloatPicker(
+fun DensityPicker(
     minValue: Double,
     maxValue: Double,
     initialValue: Double,
     onValueChanged: (Double) -> Unit
 ) {
     val context = LocalContext.current
-    val floatPicker = remember {
+    val densityPicker = remember {
         NumberPicker(ContextThemeWrapper(context, R.style.FloatPickerStyle))
     }
 
@@ -37,15 +37,15 @@ fun FloatPicker(
 
     val floatFormat = DecimalFormat(".000")
 
-    floatPicker.minValue = 0
-    floatPicker.maxValue = sortedValues.size - 1
-    floatPicker.displayedValues = sortedValues
+    densityPicker.minValue = 0
+    densityPicker.maxValue = sortedValues.size - 1
+    densityPicker.displayedValues = sortedValues
         .map { value -> floatFormat.format(value) }.toTypedArray()
-    floatPicker.wrapSelectorWheel = false
-    floatPicker.value = maxValueIntRep - initialValueIntRep
+    densityPicker.wrapSelectorWheel = false
+    densityPicker.value = maxValueIntRep - initialValueIntRep
 
     AndroidView(
-        factory = { floatPicker },
+        factory = { densityPicker },
         update = {
             it.setOnValueChangedListener { _, _, selectedValue ->
                 onValueChanged(sortedValues[selectedValue])
@@ -68,7 +68,7 @@ private fun getFloatRep(value: Int): Double {
 fun FloatPickerPreview() {
     BraulyseTheme {
         Surface(color = MaterialTheme.colorScheme.background) {
-            FloatPicker(1.000, 1.082, 1.056, {})
+            DensityPicker(1.000, 1.082, 1.056, {})
         }
     }
 }

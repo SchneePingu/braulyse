@@ -34,7 +34,7 @@ fun DensityControl(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = modifier.size(5.dp))
-        FloatPicker(
+        DensityPicker(
             minValue = DensityMeasurementService.minDensity,
             maxValue = DensityMeasurementService.maxDensity,
             initialValue = density,
