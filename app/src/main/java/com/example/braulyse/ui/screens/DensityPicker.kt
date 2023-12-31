@@ -42,6 +42,7 @@ fun DensityPicker(
     densityPicker.displayedValues = sortedValues
         .map { value -> floatFormat.format(value) }.toTypedArray()
     densityPicker.wrapSelectorWheel = false
+    densityPicker.descendantFocusability = NumberPicker.FOCUS_BLOCK_DESCENDANTS
     densityPicker.value = maxValueIntRep - initialValueIntRep
 
     AndroidView(
