@@ -49,17 +49,18 @@ private fun AlcoholContentIndicator(
     maxAlcoholContent: Double,
     modifier: Modifier = Modifier
 ) {
-    fun formatAlcoholContent(alcoholContent: Double): String {
-        if (alcoholContent < 1.000) {
-            return "%.2f".format(alcoholContent)
+    fun formatAccordingToReferenceNumber(number: Double, referenceNumber: Double): String {
+        if (referenceNumber >= 10.0) {
+            return "%.1f".format(number)
         }
 
-        return "%.3g".format(alcoholContent)
+        return "%.2f".format(number)
     }
 
-    fun formatAlcoholContentUncertainty(alcoholContentUncertainty: Double): String {
-        return "(±${formatAlcoholContent(alcoholContentUncertainty)})"
-    }
+    val alcoholContentFormatted = formatAccordingToReferenceNumber(alcoholContent, alcoholContent)
+
+    val alcoholContentUncertaintyFormatted =
+        "(±${formatAccordingToReferenceNumber(alcoholContentUncertainty, alcoholContent)})"
 
     Box(
         contentAlignment = Alignment.Center,
@@ -80,13 +81,13 @@ private fun AlcoholContentIndicator(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = formatAlcoholContent(alcoholContent),
+                text = alcoholContentFormatted,
                 fontSize = integerResource(R.integer.alcohol_content_font_size).sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.surfaceTint
             )
             Text(
-                text = formatAlcoholContentUncertainty(alcoholContentUncertainty),
+                text = alcoholContentUncertaintyFormatted,
                 fontSize = integerResource(R.integer.alcohol_content_uncertainty_font_size).sp,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.surfaceTint
