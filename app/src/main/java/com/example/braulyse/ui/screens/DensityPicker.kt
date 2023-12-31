@@ -32,7 +32,7 @@ fun DensityPicker(
     val initialValueIntRep = getIntRep(initialValue)
 
     val sortedValues = (minValueIntRep..maxValueIntRep)
-        .map { value -> getFloatRep(value) }
+        .map { value -> getDoubleRep(value) }
         .reversed()
 
     val floatFormat = DecimalFormat(".000")
@@ -58,7 +58,7 @@ private fun getIntRep(value: Double): Int {
     return (value * 500.0).roundToInt()
 }
 
-private fun getFloatRep(value: Int): Double {
+private fun getDoubleRep(value: Int): Double {
     return value * 0.002
 }
 
